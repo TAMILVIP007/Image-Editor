@@ -10,7 +10,6 @@ async def black_border(client, message):
         if not os.path.isdir(f"./DOWNLOADS/{userid}"):
             os.makedirs(f"./DOWNLOADS/{userid}")
         download_location = "./DOWNLOADS" + "/" + userid + "/" + userid + ".jpg"
-        edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-black-border.png"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
                 "Downloading image", quote=True
@@ -21,6 +20,7 @@ async def black_border(client, message):
             await msg.edit("Processing Image...")
             img = Image.open(a)
             img_with_border = ImageOps.expand(img, border=100, fill="black")
+            edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-black-border.png"
             img_with_border.save(edit_img_loc)
             await message.reply_chat_action("upload_photo")
             await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
@@ -35,13 +35,12 @@ async def black_border(client, message):
         print("black_border-error - " + str(e))
         if "USER_IS_BLOCKED" in str(e):
             return
-        else:
-            try:
-                await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
-                )
-            except Exception:
-                return
+        try:
+            await message.reply_to_message.reply_text(
+                "Something went wrong!", quote=True
+            )
+        except Exception:
+            return
 
 
 async def green_border(client, message):
@@ -50,7 +49,6 @@ async def green_border(client, message):
         if not os.path.isdir(f"./DOWNLOADS/{userid}"):
             os.makedirs(f"./DOWNLOADS/{userid}")
         download_location = "./DOWNLOADS" + "/" + userid + "/" + userid + ".jpg"
-        edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-green-border.png"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
                 "Downloading image", quote=True
@@ -61,6 +59,7 @@ async def green_border(client, message):
             await msg.edit("Processing Image...")
             img = Image.open(a)
             img_with_border = ImageOps.expand(img, border=100, fill="green")
+            edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-green-border.png"
             img_with_border.save(edit_img_loc)
             await message.reply_chat_action("upload_photo")
             await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
@@ -75,13 +74,12 @@ async def green_border(client, message):
         print("green_border-error - " + str(e))
         if "USER_IS_BLOCKED" in str(e):
             return
-        else:
-            try:
-                await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
-                )
-            except Exception:
-                return
+        try:
+            await message.reply_to_message.reply_text(
+                "Something went wrong!", quote=True
+            )
+        except Exception:
+            return
 
 
 async def blue_border(client, message):
@@ -90,7 +88,6 @@ async def blue_border(client, message):
         if not os.path.isdir(f"./DOWNLOADS/{userid}"):
             os.makedirs(f"./DOWNLOADS/{userid}")
         download_location = "./DOWNLOADS" + "/" + userid + "/" + userid + ".jpg"
-        edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-blue-border.png"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
                 "Downloading image", quote=True
@@ -101,6 +98,7 @@ async def blue_border(client, message):
             await msg.edit("Processing Image...")
             img = Image.open(a)
             img_with_border = ImageOps.expand(img, border=100, fill="blue")
+            edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-blue-border.png"
             img_with_border.save(edit_img_loc)
             await message.reply_chat_action("upload_photo")
             await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
@@ -115,13 +113,12 @@ async def blue_border(client, message):
         print("blue_border-error - " + str(e))
         if "USER_IS_BLOCKED" in str(e):
             return
-        else:
-            try:
-                await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
-                )
-            except Exception:
-                return
+        try:
+            await message.reply_to_message.reply_text(
+                "Something went wrong!", quote=True
+            )
+        except Exception:
+            return
 
 
 async def red_border(client, message):
@@ -130,7 +127,6 @@ async def red_border(client, message):
         if not os.path.isdir(f"./DOWNLOADS/{userid}"):
             os.makedirs(f"./DOWNLOADS/{userid}")
         download_location = "./DOWNLOADS" + "/" + userid + "/" + userid + ".jpg"
-        edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-red-border.png"
         if not message.reply_to_message.empty:
             msg = await message.reply_to_message.reply_text(
                 "Downloading image", quote=True
@@ -141,6 +137,7 @@ async def red_border(client, message):
             await msg.edit("Processing Image...")
             img = Image.open(a)
             img_with_border = ImageOps.expand(img, border=100, fill="red")
+            edit_img_loc = "./DOWNLOADS" + "/" + userid + "/" + "imaged-red-border.png"
             img_with_border.save(edit_img_loc)
             await message.reply_chat_action("upload_photo")
             await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
@@ -155,10 +152,9 @@ async def red_border(client, message):
         print("red_border-error - " + str(e))
         if "USER_IS_BLOCKED" in str(e):
             return
-        else:
-            try:
-                await message.reply_to_message.reply_text(
-                    "Something went wrong!", quote=True
-                )
-            except Exception:
-                return
+        try:
+            await message.reply_to_message.reply_text(
+                "Something went wrong!", quote=True
+            )
+        except Exception:
+            return
